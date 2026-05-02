@@ -1,52 +1,134 @@
-# Campus Hiring Evaluation
+# Campus Hiring Evaluation - Affordmed
 
-This repository contains solutions for the Affordmed Campus Backend Hiring Evaluation.
+**Registration Number:** RA2311056010229
 
-## Repository Structure
+This repository contains comprehensive solutions for the Affordmed Campus Backend Hiring Evaluation, demonstrating expertise in TypeScript, algorithms, system design, and backend development.
+
+## 📁 Repository Structure
 
 ```
-├── logging_middleware/              # Pre-test: Reusable logging package
+├── logging_middleware/              # 🔧 Pre-test: Reusable logging package
 │   ├── logger.ts                    # Core Log() function + convenience wrappers
-│   ├── package.json
-│   ├── tsconfig.json
-│   └── README.md
+│   ├── package.json                 # Dependencies and scripts
+│   ├── tsconfig.json               # TypeScript configuration
+│   └── README.md                    # Package documentation
 │
-├── vehicle_maintence_scheduler/     # Backend Q1: Optimal maintenance scheduling
-│   ├── scheduler.ts                 # 0/1 Knapsack DP solution
-│   ├── package.json
-│   └── README.md
+├── vehicle_maintence_scheduler/     # 🚗 Backend Q1: Optimal maintenance scheduling
+│   ├── scheduler.ts                 # 0/1 Knapsack DP solution (O(n*W) time)
+│   ├── package.json                 # Dependencies and scripts
+│   ├── tsconfig.json               # TypeScript configuration
+│   └── README.md                    # Algorithm documentation
 │
-├── notification_system_design.md    # Backend Q2: All 6 stages (design + analysis)
+├── notification_system_design.md    # 📋 Backend Q2: Complete system design
+│                                   # Stages 1-6: API design, DB schema, analysis
 │
-├── notification_app_be/             # Backend Q2 Stage 6: Priority inbox code
+├── notification_app_be/             # 📨 Backend Q2 Stage 6: Priority inbox
 │   ├── priority_inbox.ts            # Min-heap based top-N implementation
-│   └── package.json
+│   ├── package.json                 # Dependencies and scripts
+│   └── tsconfig.json               # TypeScript configuration
 │
-└── notification_app_fe/             # Frontend placeholder
+├── notification_app_fe/             # 🎨 Frontend placeholder
+│   └── .gitkeep                     # Empty directory marker
+│
+├── test-all.ps1                     # 🧪 Comprehensive test script
+├── README.md                        # 📖 Project documentation
+└── .gitignore                       # 🚫 Git ignore rules
 ```
 
-## Setup
+## 🛠️ Setup Instructions
 
-Each subfolder has its own `package.json`. Install dependencies per folder:
+Each subfolder contains its own `package.json` with dependencies. Install them individually:
 
 ```bash
+# Install logging middleware dependencies
 cd logging_middleware && npm install
-cd vehicle_maintence_scheduler && npm install
-cd notification_app_be && npm install
+
+# Install vehicle scheduler dependencies
+cd ../vehicle_maintence_scheduler && npm install
+
+# Install notification backend dependencies
+cd ../notification_app_be && npm install
 ```
 
-## Running
+## 🚀 Running the Applications
+
+### Prerequisites
+- Node.js (v16+ recommended)
+- TypeScript compiler
+- Valid authentication token (provided by evaluation system)
+
+### Vehicle Maintenance Scheduler
+```bash
+# Set your authentication token
+$env:AUTH_TOKEN = "your_auth_token_here"
+
+# Run the scheduler
+cd vehicle_maintence_scheduler
+npm run dev
+```
+
+### Priority Inbox (Stage 6)
+```bash
+# Set your authentication token
+$env:AUTH_TOKEN = "your_auth_token_here"
+
+# Set number of top notifications to fetch
+$env:TOP_N = "10"
+
+# Run the priority inbox
+cd notification_app_be
+npm run priority-inbox
+```
+
+## 🧪 Testing
+
+Run the comprehensive test suite to verify all components:
 
 ```bash
-# Set the authentication token
-$env:AUTH_TOKEN = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJNYXBDbGFpbXMiOnsiYXVkIjoiaHR0cDovLzIwLjI0NC41Ni4xNDQvZXZhbHVhdGlvbi1zZXJ2aWNlIiwiZW1haWwiOiJzczg3MjhAc3JtaXN0LmVkdS5pbiIsImV4cCI6MTc3NzcwMDIwMCwiaWF0IjoxNzc3Njk5MzAwLCJpc3MiOiJBZmZvcmQgTWVkaWNhbCBUZWNobm9sb2dpZXMgUHJpdmF0ZSBMaW1pdGVkIiwianRpIjoiY2RhYWIwM2ItYzkzNS00YjA4LTlhMjAtNWFmNGY3M2JiNDZiIiwibG9jYWxlIjoiZW4tSU4iLCJuYW1lIjoic3dldCBzYW5qZWV2Iiwic3ViIjoiNzAwZTAzZDgtYjhjYy00NjFiLWE4NGYtZjhkMDkxMmUyNWUyIn0sImVtYWlsIjoic3M4NzI4QHNybWlzdC5lZHUuaW4iLCJuYW1lIjoic3dldCBzYW5qZWV2Iiwicm9sbE5vIjoicmEyMzExMDU2MDEwMjI5IiwiYWNjZXNzQ29kZSI6IlFrYnB4SCIsImNsaWVudElEIjoiNzAwZTAzZDgtYjhjYy00NjFiLWE4NGYtZjhkMDkxMmUyNWUyIiwiY2xpZW50U2VjcmV0IjoiZldxR25WUnVHRVdHQUtaYSJ9.TAz8hn2Q9f2EEhVa-RVFGMcC4dTJodrBHG3HO1ogd_8"
-
-# Vehicle Maintenance Scheduler
-cd vehicle_maintence_scheduler
-ts-node scheduler.ts
-
-# Priority Inbox (Stage 6)
-cd notification_app_be
-$env:TOP_N = "10"
-ts-node priority_inbox.ts
+# Run all tests
+.\test-all.ps1
 ```
+
+This will:
+- ✅ Build all TypeScript packages
+- ✅ Verify file integrity
+- ✅ Test runtime execution
+- ✅ Validate configurations
+
+## 📊 Implementation Details
+
+### Backend Q1: Vehicle Maintenance Scheduler
+- **Algorithm:** 0/1 Knapsack Dynamic Programming
+- **Time Complexity:** O(n × capacity)
+- **Space Complexity:** O(n × capacity)
+- **Optimization:** Maximizes total impact within mechanic-hour constraints
+
+### Backend Q2: Notification System
+- **Stage 1-2:** Complete API design and database schema
+- **Stage 6:** Priority inbox with min-heap implementation
+- **Priority Scoring:** Type weight × exponential decay (recency factor)
+- **Time Complexity:** O(k log N) for k notifications, N top results
+
+### Logging Middleware
+- **Features:** Structured logging with multiple levels
+- **Integration:** Reusable across backend and frontend
+- **API:** RESTful logging service integration
+
+## 🏗️ Architecture Highlights
+
+- **TypeScript:** Full type safety with strict configuration
+- **Modular Design:** Independent packages with clear separation of concerns
+- **Algorithmic Excellence:** Optimized solutions for complex problems
+- **Production Ready:** Error handling, logging, and structured code
+- **Testable:** Comprehensive test suite and validation scripts
+
+## 📝 Notes
+
+- All code follows TypeScript best practices
+- Comprehensive error handling and logging implemented
+- Authentication tokens are required for API access
+- Test suite validates all functionality before submission
+
+---
+
+**Affordmed Campus Backend Hiring Evaluation - RA2311056010229**
