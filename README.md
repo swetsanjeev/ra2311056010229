@@ -1,28 +1,28 @@
-# Campus Hiring Evaluation - Affordmed
+# Backend Development Project
 
 **Registration Number:** RA2311056010229
 
-This repository contains comprehensive solutions for the Affordmed Campus Backend Hiring Evaluation, demonstrating expertise in TypeScript, algorithms, system design, and backend development.
+This repository contains comprehensive backend solutions demonstrating expertise in TypeScript, algorithms, system design, and backend development.
 
 ## Repository Structure
 
 ```
-├── logging_middleware/              # Pre-test: Reusable logging package
+├── logging_middleware/              # Reusable logging package
 │   ├── logger.ts                    # Core Log() function + convenience wrappers
 │   ├── package.json                 # Dependencies and scripts
 │   ├── tsconfig.json               # TypeScript configuration
 │   └── README.md                    # Package documentation
 │
-├── vehicle_maintence_scheduler/     # Backend Q1: Optimal maintenance scheduling
+├── vehicle_maintence_scheduler/     # Optimal maintenance scheduling
 │   ├── scheduler.ts                 # 0/1 Knapsack DP solution (O(n*W) time)
 │   ├── package.json                 # Dependencies and scripts
 │   ├── tsconfig.json               # TypeScript configuration
 │   └── README.md                    # Algorithm documentation
 │
-├── notification_system_design.md    # Backend Q2: Complete system design
-│                                   # Stages 1-6: API design, DB schema, analysis
+├── notification_system_design.md    # Complete system design
+│                                   # API design, DB schema, analysis
 │
-├── notification_app_be/             # Backend Q2 Stage 6: Priority inbox
+├── notification_app_be/             # Priority inbox implementation
 │   ├── priority_inbox.ts            # Min-heap based top-N implementation
 │   ├── package.json                 # Dependencies and scripts
 │   └── tsconfig.json               # TypeScript configuration
@@ -55,7 +55,7 @@ cd ../notification_app_be && npm install
 ### Prerequisites
 - Node.js (v16+ recommended)
 - TypeScript compiler
-- Valid authentication token (provided by evaluation system)
+- Valid authentication token (provided by system)
 
 ### Vehicle Maintenance Scheduler
 ```bash
@@ -67,7 +67,7 @@ cd vehicle_maintence_scheduler
 npm run dev
 ```
 
-### Priority Inbox (Stage 6)
+### Priority Inbox
 ```bash
 # Set your authentication token
 $env:AUTH_TOKEN = "your_auth_token_here"
@@ -97,15 +97,16 @@ This will:
 
 ## Implementation Details
 
-### Backend Q1: Vehicle Maintenance Scheduler
+### Vehicle Maintenance Scheduler
 - **Algorithm:** 0/1 Knapsack Dynamic Programming
 - **Time Complexity:** O(n × capacity)
 - **Space Complexity:** O(n × capacity)
 - **Optimization:** Maximizes total impact within mechanic-hour constraints
 
-### Backend Q2: Notification System
-- **Stage 1-2:** Complete API design and database schema
-- **Stage 6:** Priority inbox with min-heap implementation
+### Notification System
+- **API Design:** Complete REST API specification
+- **Database Schema:** Normalized relational design
+- **Priority Inbox:** Min-heap implementation for top-N ranking
 - **Priority Scoring:** Type weight × exponential decay (recency factor)
 - **Time Complexity:** O(k log N) for k notifications, N top results
 
@@ -131,4 +132,4 @@ This will:
 
 ---
 
-**Affordmed Campus Backend Hiring Evaluation - RA2311056010229**
+**Backend Development Project - RA2311056010229**
