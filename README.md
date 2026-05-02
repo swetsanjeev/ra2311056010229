@@ -13,7 +13,7 @@ This repository contains comprehensive backend solutions demonstrating expertise
 │   ├── tsconfig.json               # TypeScript configuration
 │   └── README.md                    # Package documentation
 │
-├── vehicle_maintence_scheduler/     # Optimal maintenance scheduling
+├── vehicle_maintenance_scheduler/     # Optimal maintenance scheduling
 │   ├── scheduler.ts                 # 0/1 Knapsack DP solution (O(n*W) time)
 │   ├── package.json                 # Dependencies and scripts
 │   ├── tsconfig.json               # TypeScript configuration
@@ -44,7 +44,7 @@ Each subfolder contains its own `package.json` with dependencies. Install them i
 cd logging_middleware && npm install
 
 # Install vehicle scheduler dependencies
-cd ../vehicle_maintence_scheduler && npm install
+cd ../vehicle_maintenance_scheduler && npm install
 
 # Install notification backend dependencies
 cd ../notification_app_be && npm install
