@@ -1,0 +1,19 @@
+{
+  "name": "vehicle-maintenance-scheduler",
+  "version": "1.0.0",
+  "description": "Optimal vehicle maintenance scheduling using 0/1 Knapsack DP algorithm",
+  "main": "dist/scheduler.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "ts-node scheduler.ts",
+    "dev": "ts-node scheduler.ts"
+  },
+  "keywords": ["scheduler", "knapsack", "typescript", "optimization"],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "typescript": "^5.0.0",
+    "ts-node": "^10.9.0",
+    "@types/node": "^20.0.0"
+  }
+}
